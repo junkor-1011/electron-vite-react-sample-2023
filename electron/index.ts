@@ -2,14 +2,7 @@
 import { join } from 'node:path';
 
 // Packages
-import {
-  BrowserWindow,
-  app,
-  ipcMain,
-  session,
-  shell,
-  webContents,
-} from 'electron';
+import { BrowserWindow, app, ipcMain, session, shell } from 'electron';
 import serve from 'electron-serve';
 
 // Own Libraries
