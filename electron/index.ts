@@ -2,12 +2,24 @@
 import { join } from 'node:path';
 
 // Packages
-import { BrowserWindow, app, ipcMain, session, shell } from 'electron';
+import {
+  BrowserWindow,
+  app,
+  ipcMain,
+  session,
+  shell,
+  webContents,
+} from 'electron';
 import serve from 'electron-serve';
 
 // Own Libraries
-import { exampleChannel1, exampleChannel2 } from './lib/channels';
+import {
+  exampleChannel1,
+  exampleChannel2,
+  exampleChannel3,
+} from './lib/channels';
 import { invokeExampleHandler, sendExampleHandler } from './lib/handler';
+import { ListenerExampleEventArgs } from './lib/events';
 
 /** url of vite development server */
 const devServerUrl = 'http://localhost:5173';
@@ -47,6 +59,17 @@ app.on('ready', async () => {
     // development
     await mainWindow.loadURL(devServerUrl);
   }
+
+  const contents = mainWindow.webContents;
+
+  // send to renderer example
+  setInterval(() => {
+    const now = new Date();
+    const args: ListenerExampleEventArgs = [
+      `message from main: it is ${now.toISOString()}`,
+    ];
+    contents.send(exampleChannel3, ...args);
+  }, 10 * 1000);
 });
 
 // Quit the app once all windows are closed
