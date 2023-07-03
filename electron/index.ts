@@ -12,7 +12,7 @@ import {
   exampleChannel3,
 } from './lib/channels';
 import { invokeExampleHandler, sendExampleHandler } from './lib/handler';
-import { ListenerExampleEventArgs } from './lib/events';
+import { registerExampleEvent } from './lib/events';
 
 /** url of vite development server */
 const devServerUrl = 'http://localhost:5173';
@@ -55,14 +55,7 @@ app.on('ready', async () => {
 
   const contents = mainWindow.webContents;
 
-  // send to renderer example
-  setInterval(() => {
-    const now = new Date();
-    const args: ListenerExampleEventArgs = [
-      `message from main: it is ${now.toISOString()}`,
-    ];
-    contents.send(exampleChannel3, ...args);
-  }, 10 * 1000);
+  registerExampleEvent({ contents, channel: exampleChannel3 });
 });
 
 // Quit the app once all windows are closed
