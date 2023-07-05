@@ -13,6 +13,7 @@ import {
 } from './lib/channels';
 import { invokeExampleHandler, sendExampleHandler } from './lib/handler';
 import { registerExampleEvent } from './lib/events';
+import { setMenu } from './lib/menu';
 
 /** url of vite development server */
 const devServerUrl = 'http://localhost:5173';
@@ -52,6 +53,9 @@ app.on('ready', async () => {
     // development
     await mainWindow.loadURL(devServerUrl);
   }
+
+  // set menu
+  setMenu();
 
   const contents = mainWindow.webContents;
 
