@@ -15,6 +15,17 @@ import { invokeExampleHandler, sendExampleHandler } from './lib/handler';
 import { registerExampleEvent } from './lib/events';
 import { setMenu } from './lib/menu';
 
+// get app version
+import { version as applicationVersion, name as applicationName } from '../package.json';
+
+// about panel
+app.setAboutPanelOptions({
+  applicationName,
+  applicationVersion,
+  authors: ['junkor-1011'], // EDIT
+  copyright: '©2023 junkor-1011' // EDIT
+});
+
 /** url of vite development server */
 const devServerUrl = 'http://localhost:5173';
 
