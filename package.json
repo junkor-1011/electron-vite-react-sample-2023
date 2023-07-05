@@ -5,6 +5,7 @@
   },
   "private": true,
   "name": "electron-vite-react-sample",
+  "license": "MIT",
   "version": "0.0.1",
   "description": "",
   "main": "main/index.js",
