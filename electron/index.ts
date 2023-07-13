@@ -57,6 +57,7 @@ app.on('ready', async () => {
     height: 900,
     webPreferences: {
       preload: join(__dirname, 'preload.js'),
+      devTools: !app.isPackaged,
     },
   });
 
