@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import reactLogo from './assets/react.svg';
 import viteLogo from '/vite.svg';
 import './App.css';
 import Listener from './Listener';
+import reactLogo from './assets/react.svg';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -10,16 +10,16 @@ function App() {
   return (
     <>
       <div>
-        <a href="https://vitejs.dev" target="_blank">
+        <a href="https://vitejs.dev" target="_blank" rel="noreferrer">
           <img src={viteLogo} className="logo" alt="Vite logo" />
         </a>
-        <a href="https://react.dev" target="_blank">
+        <a href="https://react.dev" target="_blank" rel="noreferrer">
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
       </div>
       <h1>Vite + React</h1>
       <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
+        <button onClick={() => setCount((count) => count + 1)} type="submit">
           count is {count}
         </button>
         <button
@@ -27,6 +27,7 @@ function App() {
             e.preventDefault();
             window.electronAPI.sendExample('message from renderer: send');
           }}
+          type="submit"
         >
           ipc send
         </button>
@@ -38,6 +39,7 @@ function App() {
             });
             alert(res);
           }}
+          type="submit"
         >
           ipc invoke
         </button>
