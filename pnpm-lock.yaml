@@ -30,8 +30,8 @@ importers:
         specifier: ^32.0.1
         version: 32.0.1
       electron-serve:
-        specifier: ^1.3.0
-        version: 1.3.0
+        specifier: 2.0.0
+        version: 2.0.0
     devDependencies:
       '@types/node':
         specifier: ^22.5.0
@@ -1297,9 +1297,9 @@ packages:
   electron-publish@25.0.0-alpha.10:
     resolution: {integrity: sha512-1gaPPPC/TRAG9TYUW02T8+I1BlaiR2zrTA2m6iyOQ1vsa7zUqjE+VABfYBtaBJ9p+WIzwkZO8+L47cvh2dvSqA==}
 
-  electron-serve@1.3.0:
-    resolution: {integrity: sha512-OEC/48ZBJxR6XNSZtCl4cKPyQ1lvsu8yp8GdCplMWwGS1eEyMcEmzML5BRs/io/RLDnpgyf+7rSL+X6ICifRIg==}
-    engines: {node: '>=12'}
+  electron-serve@2.0.0:
+    resolution: {integrity: sha512-rXpUJxa8xqjuybBwJEX8uvMAwNpMbozvUXkXtBGzE71jzA7G36nv3MODgN9aOaAIDvjySkf2s2uDUirFgfKCjQ==}
+    engines: {node: '>=18'}
 
   electron@32.0.1:
     resolution: {integrity: sha512-5Hd5Jaf9niYVR2hZxoRd3gOrcxPOxQV1XPV5WaoSfT9jLJHFadhlKtuSDIk3U6rQZke+aC7GqPPAv55nWFCMsA==}
@@ -4172,7 +4172,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  electron-serve@1.3.0: {}
+  electron-serve@2.0.0: {}
 
   electron@32.0.1:
     dependencies:
